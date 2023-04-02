@@ -1,5 +1,43 @@
+html, body{
+    min-height: 100%;
+}
+
 body.style_light{
-    background: white;
-    color: black;
-    background: rgb(0, 140, 255);
+    background: rgb(230, 230, 230);
+    color: rgb(25, 25, 25);
+    --Radius: 2.5px;
+    --Border: 0;
+    --ModuleFontColor: rgb(230, 230, 230);
+    --ModuleBackground: rgb(0, 160, 255);
+    --ModuleBackground-hover: rgb(10, 170, 255);
+    --ModuleBackground-active: rgb(25, 185, 255);
+}
+
+body.style_technology{
+    background: linear-gradient(105deg,rgb(0, 37, 16), rgb(0, 2, 32));
+    color: rgb(0, 125, 0);
+    --Radius: 0;
+    --Border: 2.5px solid rgb(0, 125, 0);
+    --ModuleFontColor: rgb(0, 125, 0);
+    --ModuleBackground: linear-gradient(135deg, rgba(0, 125, 0, 0.1) 0%, rgba(0, 0, 0, 0) 0%);
+    --ModuleBackground-hover: linear-gradient(135deg, rgba(0, 125, 0, 0.1) 100%, rgba(0, 0, 0, 0) 100%);
+    --ModuleBackground-active: rgba(0, 125, 0, 0.5);
+}
+
+/*Button*/
+button{
+    border: var(--Border);
+    border-radius: var(--Radius);
+    background: var(--ModuleBackground);
+    color: var(--ModuleFontColor);
+    transition-property: background;
+    padding: 15px;
+}
+
+button:hover{
+    background: var(--ModuleBackground-hover);
+}
+
+button:active{
+    background: var(--ModuleBackground-active);
 }
