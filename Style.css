@@ -3,56 +3,53 @@ body.style_light{
     --AcrylicFontColor: rgb(235, 235, 235);
     --AcrylicBorder: rgba(100, 100, 100, 0.5);
     --Acrylic: rgba(50, 50, 50, 0.5);
+    --Acrylic-hover: rgba(60, 60, 60, 0.5);
+    --Acrylic-active: rgba(70, 70, 70, 0.5);
     margin: 0;
     padding: 0;
 }
 
 /*LeftBar Body*/
+div.LeftBar{
+    transition: 0.25s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    border: 0;
+    border-right: 2.5px solid var(--AcrylicBorder);
+    color: var(--AcrylicFontColor);
+    background-color: var(--Acrylic);
+    backdrop-filter: blur(15px);
+    overflow-x: hidden;
+}
+
+div.WithLeftBarBody{
+    transition: 0.25s;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 350px);
+}
+
 @media screen and (min-width: 960px) {
     div.LeftBar{
-        transition: 0.25s;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
         width: 350px;
-        border: 0;
-        border-right: 2.5px solid var(--AcrylicBorder);
-        color: var(--AcrylicFontColor);
-        background-color: var(--Acrylic);
-        backdrop-filter: blur(15px);
     }
 
     div.WithLeftBarBody{
-        transition: 0.25s;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
         width: calc(100% - 350px);
     }
 }
 
 @media screen and (max-width: 960px) {
     div.LeftBar{
-        transition: 0.25s;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 0px;
-        border: 0;
-        color: var(--AcrylicFontColor);
-        background-color: var(--Acrylic);
-        backdrop-filter: blur(15px);
+        width: 0;
     }
 
     div.WithLeftBarBody{
-        transition: 0.25s;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
         width: 100%;
     }
 }
@@ -65,4 +62,32 @@ button{
     background-color: rgb(52, 152, 219);
     padding: 10px;
     margin: 5px;
+}
+
+button:hover{
+    background-color: rgb(62, 162, 229);
+}
+
+button:active{
+    background-color: rgb(72, 172, 239);
+}
+
+div.LeftBar button{
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 2.5px solid var(--AcrylicBorder);
+    border-radius: 2.5px;
+    color: var(--AcrylicFontColor);
+    background-color: var(--Acrylic);
+    padding: 10px;
+    margin: 5px;
+}
+
+div.LeftBar button:hover{
+    background-color: var(--Acrylic-hover);
+}
+
+div.LeftBar button:active{
+    background-color: var(--Acrylic-active);
 }
