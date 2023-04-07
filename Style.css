@@ -1,28 +1,32 @@
+*{
+    outline: none;
+    user-select: none;
+}
+
 body.style_light{
     background-color: rgb(235, 235, 235);
     --AcrylicFontColor: rgb(235, 235, 235);
-    --AcrylicBorder: rgba(100, 100, 100, 0.5);
-    --Acrylic: rgba(50, 50, 50, 0.3);
-    --Acrylic-hover: rgba(60, 60, 60, 0.5);
-    --Acrylic-active: rgba(70, 70, 70, 0.5);
+    --AcrylicBorder: rgba(255, 255, 255, 0.1);
+    --Acrylic: rgba(0, 0, 0, 0.5);
+    --AcrylicItem: rgba(255, 255, 255, 0.1);
+    --AcrylicItem-hover: rgba(255, 255, 255, 0.25);
+    --AcrylicItem-active: rgba(255, 255, 255, 0.3);
     margin: 0;
     padding: 0;
 }
 
 /*LeftBar Body*/
 div.LeftBar{
-    transition: 0.25s;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 0;
+    width: 70px;
     border: 0;
     border-right: 2.5px solid var(--AcrylicBorder);
     color: var(--AcrylicFontColor);
     background-color: var(--Acrylic);
     backdrop-filter: blur(15px);
-    overflow-x: hidden;
 }
 
 div.WithLeftBarBody{
@@ -31,27 +35,67 @@ div.WithLeftBarBody{
     top: 0;
     right: 0;
     bottom: 0;
-    width: calc(100% - 350px);
+    width: calc(100% - 70px);
 }
 
-@media screen and (min-width: 960px) {
-    div.LeftBar{
-        width: 350px;
-    }
-
-    div.WithLeftBarBody{
-        width: calc(100% - 350px);
-    }
+div.LeftBar button{
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: var(--AcrylicItem);
+    border-radius: 5px;
+    margin: 10px;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 960px) {
-    div.LeftBar{
-        width: 0;
-    }
+div.LeftBar button:hover{
+    background-color: var(--AcrylicItem-hover);
+}
 
-    div.WithLeftBarBody{
-        width: 100%;
-    }
+div.LeftBar button:active{
+    background-color: var(--AcrylicItem-active);
+}
+
+div.LeftBar Item{
+    transition: 0.25s;
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: var(--AcrylicItem);
+    border-radius: 5px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+div.LeftBar Item > *{
+    position: absolute;
+}
+
+div.LeftBar Item > img{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+div.LeftBar Item Information{
+    transition: 0.25s;
+    display: none;
+    background-color: rgba(0, 0, 0, 0);
+    transform: translateX(50px);
+}
+
+div.LeftBar Item:hover{
+    background-color: var(--Acrylic);
+    width: 350px;
+}
+
+div.LeftBar Item:hover Information{
+    height: 40px;
+    width: auto;
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /*Button*/
@@ -70,24 +114,4 @@ button:hover{
 
 button:active{
     background-color: rgb(72, 172, 239);
-}
-
-div.LeftBar button{
-    position: absolute;
-    left: 0;
-    right: 0;
-    border: 2.5px solid var(--AcrylicBorder);
-    border-radius: 2.5px;
-    color: var(--AcrylicFontColor);
-    background-color: var(--Acrylic);
-    padding: 10px;
-    margin: 5px;
-}
-
-div.LeftBar button:hover{
-    background-color: var(--Acrylic-hover);
-}
-
-div.LeftBar button:active{
-    background-color: var(--Acrylic-active);
 }
