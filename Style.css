@@ -39,11 +39,12 @@ div.WithLeftBarBody{
 }
 
 div.LeftBar button{
+    transition: 0.25s;
     display: block;
     width: 50px;
     height: 50px;
     color: white;
-    background-color: var(--AcrylicItem);
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 5px;
     margin: 10px;
     overflow: hidden;
@@ -63,7 +64,7 @@ div.LeftBar Item{
     width: 50px;
     height: 50px;
     color: white;
-    background-color: var(--AcrylicItem);
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 5px;
     margin: 10px;
     overflow: hidden;
