@@ -2,7 +2,7 @@ body.style_light{
     background-color: rgb(235, 235, 235);
     --AcrylicFontColor: rgb(235, 235, 235);
     --AcrylicBorder: rgba(100, 100, 100, 0.5);
-    --Acrylic: rgba(50, 50, 50, 0.5);
+    --Acrylic: rgba(50, 50, 50, 0.3);
     --Acrylic-hover: rgba(60, 60, 60, 0.5);
     --Acrylic-active: rgba(70, 70, 70, 0.5);
     margin: 0;
