@@ -1,118 +1,86 @@
 *{
+    transition: 0.15s;
     outline: none;
     user-select: none;
 }
 
-body.style_light{
-    background-color: rgb(235, 235, 235);
-    --AcrylicFontColor: rgb(235, 235, 235);
-    --AcrylicBorder: rgba(255, 255, 255, 0.1);
-    --Acrylic: rgba(0, 0, 0, 0.5);
-    --AcrylicItem: rgba(255, 255, 255, 0.1);
-    --AcrylicItem-hover: rgba(255, 255, 255, 0.25);
-    --AcrylicItem-active: rgba(255, 255, 255, 0.3);
-    margin: 0;
-    padding: 0;
+body.Style_Light{
+    background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
+
+    --Block-Background: rgb(250, 255, 255);
+    --Block-Color: rgb(0, 0, 0);
+    --Block-BoxShadow: rgb(200, 200, 200);
+    --Block-SubElement-Background: rgba(0, 0, 0, 0);
+    --Block-SubElement-Background-hover: rgba(0, 0, 0, 0.1);
+    --Block-SubElement-Background-active: rgba(0, 0, 0, 0.15);
+
+    --FuncionElement-Color: rgb(255, 255, 255);
+    --FuncionElement-Background: rgb(52, 152, 219);
 }
 
-/*LeftBar Body*/
-div.LeftBar{
+/*LeftMenu*/
+body:has(LeftMenu){
+    position: absolute;
+    left: 350px;
+}
+
+LeftMenu{
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 70px;
-    border: 0;
-    border-right: 2.5px solid var(--AcrylicBorder);
-    color: var(--AcrylicFontColor);
-    background-color: var(--Acrylic);
-    backdrop-filter: blur(15px);
-}
-
-div.WithLeftBarBody{
-    transition: 0.25s;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: calc(100% - 70px);
-}
-
-div.LeftBar button{
-    transition: 0.25s;
-    display: block;
-    width: 50px;
-    height: 50px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 5px;
-    margin: 10px;
-    overflow: hidden;
-}
-
-div.LeftBar button:hover{
-    background-color: var(--AcrylicItem-hover);
-}
-
-div.LeftBar button:active{
-    background-color: var(--AcrylicItem-active);
-}
-
-div.LeftBar Item{
-    transition: 0.25s;
-    display: block;
-    width: 50px;
-    height: 50px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 5px;
-    margin: 10px;
-    overflow: hidden;
-}
-
-div.LeftBar Item > *{
-    position: absolute;
-}
-
-div.LeftBar Item > img{
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-}
-
-div.LeftBar Item Information{
-    transition: 0.25s;
-    display: none;
-    background-color: rgba(0, 0, 0, 0);
-    transform: translateX(50px);
-}
-
-div.LeftBar Item:hover{
-    background-color: var(--Acrylic);
     width: 350px;
+    background-color: var(--Block-Background);
+    box-shadow: 0 0 5px var(--Block-BoxShadow);
+    overflow: hidden;
 }
 
-div.LeftBar Item:hover Information{
-    height: 40px;
-    width: auto;
+@media screen and (max-width: 1000px) {
+    body:has(LeftMenu){
+        left: 0;
+    }
+
+    LeftMenu{
+        width: 0;
+    }
+}
+
+LeftMenu > *{
     display: block;
-    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
-/*Button*/
+LeftMenu > button{
+    padding: 15px;
+    color: var(--Block-Color);
+    background-color: var(--Block-SubElement-Background);
+}
+
+LeftMenu > button:hover{
+    color: var(--Block-Color);
+    background-color: var(--Block-SubElement-Background-hover);
+}
+
+LeftMenu > button:active{
+    color: var(--Block-Color);
+    background-color: var(--Block-SubElement-Background-active);
+}
+
+/*button*/
 button{
+    display: inline-block;
     border: 0;
     border-radius: 2.5px;
-    color: rgb(235, 235, 235);
-    background-color: rgb(52, 152, 219);
+    color: var(--FuncionElement-Color);
+    background-color: var(--FuncionElement-Background);
     padding: 10px;
-    margin: 5px;
-}
-
-button:hover{
-    background-color: rgb(62, 162, 229);
-}
-
-button:active{
-    background-color: rgb(72, 172, 239);
+    margin: 10px;
 }
