@@ -1,5 +1,5 @@
 *{
-    transition: 0.15s;
+    transition: 0.05s;
     outline: none;
     user-select: none;
 }
@@ -7,80 +7,34 @@
 body.Style_Light{
     background-color: rgb(240, 240, 240);
     color: rgb(0, 0, 0);
+    --GlobalColor: rgb(0, 0, 0);
 
-    --Block-Background: rgb(250, 255, 255);
-    --Block-Color: rgb(0, 0, 0);
-    --Block-BoxShadow: rgb(200, 200, 200);
-    --Block-SubElement-Background: rgba(0, 0, 0, 0);
-    --Block-SubElement-Background-hover: rgba(0, 0, 0, 0.1);
-    --Block-SubElement-Background-active: rgba(0, 0, 0, 0.15);
-
-    --FuncionElement-Color: rgb(255, 255, 255);
-    --FuncionElement-Background: rgb(52, 152, 219);
-}
-
-/*LeftMenu*/
-body:has(LeftMenu){
-    position: absolute;
-    left: 350px;
-}
-
-LeftMenu{
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 350px;
-    background-color: var(--Block-Background);
-    box-shadow: 0 0 5px var(--Block-BoxShadow);
-    overflow: hidden;
-}
-
-@media screen and (max-width: 1000px) {
-    body:has(LeftMenu){
-        left: 0;
-    }
-
-    LeftMenu{
-        width: 0;
-    }
-}
-
-LeftMenu > *{
-    display: block;
-    position: absolute;
-    left: 5px;
-    right: 5px;
-    padding: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-LeftMenu > button{
-    padding: 15px;
-    color: var(--Block-Color);
-    background-color: var(--Block-SubElement-Background);
-}
-
-LeftMenu > button:hover{
-    color: var(--Block-Color);
-    background-color: var(--Block-SubElement-Background-hover);
-}
-
-LeftMenu > button:active{
-    color: var(--Block-Color);
-    background-color: var(--Block-SubElement-Background-active);
+    --BoxBackground: rgba(0, 0, 0, 0.5);
 }
 
 /*button*/
 button{
     display: inline-block;
     border: 0;
-    border-radius: 2.5px;
-    color: var(--FuncionElement-Color);
-    background-color: var(--FuncionElement-Background);
+    color: rgb(255, 255, 255);
+    background-color: rgb(52, 152, 219);
     padding: 10px;
     margin: 10px;
+}
+
+button.none{
+    color: var(--GlobalColor);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+button:hover{
+    background-color: rgb(32, 132, 199);
+}
+
+button.none:hover{
+    background-color: var(--BoxBackground);
+}
+
+button:active{
+    background-color: rgb(12, 112, 179);
 }
