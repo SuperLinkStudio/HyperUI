@@ -1,6 +1,6 @@
 # HyperUI 官方文档
 
-该 HyperWebUI 目前处于为开发完成的状态，在功能上会有欠缺，请见谅。
+该 HyperWebUI 目前处于未开发完成的状态，在功能上会有欠缺，请见谅。
 
 ## 网页
 
@@ -19,31 +19,3 @@
     </body>
 </html>
 ````
-
-##  主题与主题预设
-
-### 主题
-在 HyperWebUI 中，主题是最重要的一项设置。如果不设置它， HyperWebUI 将不会产生任何效果。
-<br>
-所谓的 "主题" 实际上是一堆 css 属性与全局变量。这些属性和全局变量定义了你网站的样式。目前已有的属性和全局变量如下：
-
-- 属性
-    - `background`  网站背景样式
-    - `color`  普通文字的颜色
-- 全局变量
-    - `--Radius`  块元素的圆角大小
-    - `--Border`  块元素的边框样式
-    - `--ModuleFontColor`  块元素内联的字体颜色
-    - `--ModuleBackground`  块元素的背景样式
-    - `--ModuleBackground-hover`  鼠标悬停在可交互元素上时，可交互元素的背景样式
-    - `--ModuleBackground-active`  鼠标点击可交互元素时，可交互元素的背景样式
-
-如果你懂 css ，可以通过编辑 `<body>` 的 style 属性值来定义以上的属性值从而达到自定义样式的效果。如果你不懂 css ，或者不愿意自定义样式，可以使用 **主题预设** 来 "解放双手" 。
-
-### 主题预设
-在目前的 HyperWebUI 版本中， 提供了两种主题预设。分别为：
-
-- style_light
-- style_technology
-
-请在 `<body>` 的 class 属性的值设置为你所需的主题预设的名称。
