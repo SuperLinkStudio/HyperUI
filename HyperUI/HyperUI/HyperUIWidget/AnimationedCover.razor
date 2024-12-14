@@ -1,0 +1,22 @@
+﻿@namespace HyperUIWidget
+
+<div class="animationed-cover-widget @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(WidgetAnimationDirection)) @(ElementClass)" style="--animation-delay: @(Delay)s; @(ElementStyle)">
+    <div class="cover @(IsHighlightCover ? "highlight child-highlight" : null) @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(CoverAnimationDirection))">
+        @(ContentOnHover)
+    </div>
+    <div>
+        @(ChildContent)
+    </div>
+</div>
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public RenderFragment? ContentOnHover { get; set; }
+    [Parameter] public double Delay { get; set; } = 0.0;
+    [Parameter] public bool IsHighlightCover { get; set; }
+    [Parameter] public CilpPathAnimationDirectionDefault.DirectionDefault WidgetAnimationDirection { get; set; } = CilpPathAnimationDirectionDefault.DirectionDefault.FromLeft;
+    [Parameter] public CilpPathAnimationDirectionDefault.DirectionDefault CoverAnimationDirection { get; set; } = CilpPathAnimationDirectionDefault.DirectionDefault.ToRight;
+
+    [Parameter] public string? ElementClass { get; set; }
+    [Parameter] public string? ElementStyle { get; set; }
+}

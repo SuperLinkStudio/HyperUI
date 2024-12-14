@@ -1,0 +1,23 @@
+﻿/*
+    本文件定义 input 组件样式
+*/
+
+input {
+    transition: filter 0.1s, border 0.1s;
+    border: 2.5px solid rgb(var(--border-color));
+    border-radius: 0;
+    background: rgba(var(--theme-color), 0.2);
+    padding: 8px 16px;
+}
+
+input:hover {
+    filter: brightness(1.05);
+}
+
+input:active {
+    filter: brightness(0.95);
+}
+
+input:focus {
+    border: 2.5px solid rgb(var(--highlight-color));
+}

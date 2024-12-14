@@ -1,0 +1,18 @@
+﻿button > div.hover-cover {
+    transition: clip-path 0.1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: none;
+    background: rgb(var(--highlight-color));
+    color: rgb(var(--highlight-text-color));
+    clip-path: inset(0 100% 0 0);
+    padding: 8px 16px;
+    z-index: 1;
+}
+
+button:hover > div.hover-cover, button.always-hightlight > div.hover-cover {
+    clip-path: inset(0 0 0 0);
+}

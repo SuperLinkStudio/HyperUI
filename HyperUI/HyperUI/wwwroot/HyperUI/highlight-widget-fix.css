@@ -1,0 +1,7 @@
+﻿/*
+    本文件用于修复 razor 框架因私有化 css 的 "*" 通配符而导致的组件的 RenderFragment 内容无法高亮的问题
+*/
+
+.child-highlight * {
+    color: rgb(var(--highlight-text-color));
+}

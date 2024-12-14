@@ -1,0 +1,26 @@
+﻿.animationed-cover-widget {
+    display: inline-block;
+    position: relative;
+    clip-path: var(--clip-path-animation-start);
+    animation: clip-path-animation 0.5s ease var(--animation-delay) both;
+}
+
+.animationed-cover-widget > div.cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(var(--theme-color));
+    clip-path: var(--clip-path-animation-start);
+    animation: clip-path-animation 0.5s ease calc(var(--animation-delay) + 0.6s) both;
+    z-index: 1;
+}
+
+.animationed-cover-widget > div.cover.highlight {
+    background: rgb(var(--highlight-color));
+    color: rgb(var(--highlight-text-color));
+}

@@ -1,0 +1,19 @@
+﻿@namespace HyperUIWidget
+
+<button disable-normal-hover class="@(ShouldAlwaysHighlight ? "always-hightlight" : null) @(ElementClass)" style="@(ElementStyle)">
+    <div class="hover-cover child-highlight">
+        @(ContentOnHover == null ? ChildContent : ContentOnHover)
+    </div>
+    <div>
+        @(ChildContent)
+    </div>
+</button>
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public RenderFragment? ContentOnHover { get; set; }
+    [Parameter] public bool ShouldAlwaysHighlight { get; set; } = false;
+
+    [Parameter] public string? ElementClass { get; set; }
+    [Parameter] public string? ElementStyle { get; set; }
+}

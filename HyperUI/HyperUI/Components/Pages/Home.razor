@@ -1,0 +1,43 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<AnimationedCover IsHighlightCover=true ElementClass="full-width full-viewport-height" Delay=0.5 WidgetAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.FromBottom CoverAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.ToTop>
+    <ChildContent>
+        <div>
+            <h1>Hello, world!</h1>
+            <p>Welcome to your new app.</p>
+
+            <br />
+            <br />
+
+            <div>
+                <button>Button</button>
+
+                <AnimationedButton>AnimationedButton</AnimationedButton>
+
+                <AnimationedButton>
+                    <ChildContent>
+                        Continue
+                    </ChildContent>
+                    <ContentOnHover>
+                        LogIn &rarr;
+                    </ContentOnHover>
+                </AnimationedButton>
+
+                <AnimationedButton ShouldAlwaysHighlight=true>Selected</AnimationedButton>
+            </div>
+            <br />
+            <div>
+                <input />
+            </div>
+            <br />
+            <div>
+                <AnimationedCover Delay=1><p>animationed covered text</p></AnimationedCover>
+            </div>
+        </div>
+    </ChildContent>
+    <ContentOnHover>
+        <b>Hyper UI Playground</b>
+    </ContentOnHover>
+</AnimationedCover>

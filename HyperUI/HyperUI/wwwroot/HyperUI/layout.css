@@ -1,0 +1,36 @@
+﻿/*
+    本文件用于定义一些方便排版的 class
+
+    提示：过于依赖本文件会产生副作用，导致包括代码混乱、排版困难在内的各种问题。
+    如不需要此文件，可以删除，记得在 main.css 里面解除 import。
+*/
+
+/*填充屏幕*/
+.full-width {
+    width: 100%;
+}
+
+.full-viewport-width {
+    width: 100vw;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.full-viewport-height {
+    height: 100vh;
+}
+
+/*flex 部分*/
+.flex {
+    display: flex;
+}
+
+.flex.vertical-center {
+    align-items: center;
+}
+
+.flex.horizontal-center {
+    justify-content: center;
+}
