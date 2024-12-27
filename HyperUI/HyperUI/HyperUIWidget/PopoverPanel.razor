@@ -1,0 +1,30 @@
+﻿@namespace HyperUIWidget
+
+<div class="popover-panel-mask @(isOpen ? "open" : null)">
+    <AnimationedCover @ref=animationedCoverReference IsShowOnFirst=false IsHighlightCover=true WidgetAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.FromTop CoverAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.ToBottom>
+        <div class="popover-panel-body">
+            @(ChildContent)
+        </div>
+    </AnimationedCover>
+</div>
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    bool isOpen { get; set; } = false;
+
+    AnimationedCover? animationedCoverReference;
+
+    public void Show()
+    {
+        isOpen = true;
+
+        animationedCoverReference?.Show();
+    }
+
+    public void Hide()
+    {
+        isOpen = false;
+
+        animationedCoverReference?.Hide();
+    }
+}

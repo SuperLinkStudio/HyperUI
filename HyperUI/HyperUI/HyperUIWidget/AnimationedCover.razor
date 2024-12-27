@@ -1,8 +1,8 @@
 ﻿@namespace HyperUIWidget
 
-<div class="animationed-cover-widget @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(WidgetAnimationDirection)) @(ElementClass)" style="--animation-delay: @(Delay)s; @(ElementStyle)">
-    <div class="cover @(IsHighlightCover ? "highlight child-highlight" : null) @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(CoverAnimationDirection))">
-        @(ContentOnHover)
+<div class="animationed-cover @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(WidgetAnimationDirection)) @(ElementClass) @(stateClassFlag)" style="--animation-delay: @(Delay)s; @(ElementStyle)">
+    <div class="cover-layer @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(CoverAnimationDirection)) @(IsHighlightCover ? "highlight child-highlight" : null)">
+        @(CoverContent)
     </div>
     <div>
         @(ChildContent)
@@ -11,12 +11,32 @@
 
 @code {
     [Parameter] public RenderFragment? ChildContent { get; set; }
-    [Parameter] public RenderFragment? ContentOnHover { get; set; }
-    [Parameter] public double Delay { get; set; } = 0.0;
-    [Parameter] public bool IsHighlightCover { get; set; }
+    [Parameter] public RenderFragment? CoverContent { get; set; }
+
     [Parameter] public CilpPathAnimationDirectionDefault.DirectionDefault WidgetAnimationDirection { get; set; } = CilpPathAnimationDirectionDefault.DirectionDefault.FromLeft;
     [Parameter] public CilpPathAnimationDirectionDefault.DirectionDefault CoverAnimationDirection { get; set; } = CilpPathAnimationDirectionDefault.DirectionDefault.ToRight;
 
+    [Parameter] public double Delay { get; set; } = 0.0;
+    [Parameter] public bool IsHighlightCover { get; set; }
+
+    [Parameter] public bool IsShowOnFirst { get; set; } = true;
+
     [Parameter] public string? ElementClass { get; set; }
     [Parameter] public string? ElementStyle { get; set; }
+
+    string? stateClassFlag = "";
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        if (IsShowOnFirst && firstRender)
+        {
+            Show();
+        }
+    }
+
+    public void Show() => stateClassFlag = "open";
+
+    public void Hide() => stateClassFlag = "close";
 }

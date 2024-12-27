@@ -6,21 +6,22 @@ button {
     transition: background 0.1s, color 0.1s, filter 0.1s;
     position: relative;
     border: none;
+    border-radius: var(--radius);
     background: rgb(var(--theme-color));
     color: rgb(var(--theme-text-color));
     padding: 8px 16px;
+}
+
+button[highlight] {
+    background: rgb(var(--highlight-color));
+    color: rgb(var(--highlight-text-color));
 }
 
 button:hover {
     filter: brightness(1.05);
 }
 
-button:not([disable-normal-hover]):hover {
-    background: rgb(var(--highlight-color));
-    color: rgb(var(--highlight-text-color));
-}
-
-button:not([disable-normal-hover]):hover * {
+button[highlight]:hover * {
     color: rgb(var(--highlight-text-color));
 }
 

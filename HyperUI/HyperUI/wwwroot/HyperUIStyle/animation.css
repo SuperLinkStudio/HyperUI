@@ -3,43 +3,43 @@
 */
 
 .clip-path-animation--from-top {
-    --clip-path-animation-start: inset(0 0 100% 0);
-    --clip-path-animation-end: inset(0 0 0 0);
+    --clip-path-animation-start: inset(0 0 100% 0 round var(--radius));
+    --clip-path-animation-end: inset(0 0 0 0 round var(--radius));
 }
 
 .clip-path-animation--to-top {
-    --clip-path-animation-start: inset(0 0 0 0);
-    --clip-path-animation-end: inset(0 0 100% 0);
+    --clip-path-animation-start: inset(0 0 0 0 round var(--radius));
+    --clip-path-animation-end: inset(0 0 100% 0 round var(--radius));
 }
 
 .clip-path-animation--from-left {
-    --clip-path-animation-start: inset(0 100% 0 0);
-    --clip-path-animation-end: inset(0 0 0 0);
+    --clip-path-animation-start: inset(0 100% 0 0 round var(--radius));
+    --clip-path-animation-end: inset(0 0 0 0 round var(--radius));
 }
 
 .clip-path-animation--to-left {
-    --clip-path-animation-start: inset(0 0 0 0);
-    --clip-path-animation-end: inset(0 100% 0 0);
+    --clip-path-animation-start: inset(0 0 0 0 round var(--radius));
+    --clip-path-animation-end: inset(0 100% 0 0 round var(--radius));
 }
 
 .clip-path-animation--from-right {
-    --clip-path-animation-start: inset(0 0 0 100%);
-    --clip-path-animation-end: inset(0 0 0 0);
+    --clip-path-animation-start: inset(0 0 0 100% round var(--radius));
+    --clip-path-animation-end: inset(0 0 0 0 round var(--radius));
 }
 
 .clip-path-animation--to-right {
-    --clip-path-animation-start: inset(0 0 0 0);
-    --clip-path-animation-end: inset(0 0 0 100%);
+    --clip-path-animation-start: inset(0 0 0 0 round var(--radius));
+    --clip-path-animation-end: inset(0 0 0 100% round var(--radius));
 }
 
 .clip-path-animation--from-bottom {
-    --clip-path-animation-start: inset(100% 0 0 0);
-    --clip-path-animation-end: inset(0 0 0 0);
+    --clip-path-animation-start: inset(100% 0 0 0 round var(--radius));
+    --clip-path-animation-end: inset(0 0 0 0 round var(--radius));
 }
 
 .clip-path-animation--to-bottom {
-    --clip-path-animation-start: inset(0 0 0 0);
-    --clip-path-animation-end: inset(100% 0 0 0);
+    --clip-path-animation-start: inset(0 0 0 0 round var(--radius));
+    --clip-path-animation-end: inset(100% 0 0 0 round var(--radius));
 }
 
 @keyframes clip-path-animation {

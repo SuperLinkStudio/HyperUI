@@ -1,11 +1,16 @@
-﻿.animationed-cover-widget {
+﻿.animationed-cover {
+    transition: clip-path 0.4s var(--animation-delay);
     display: inline-block;
     position: relative;
     clip-path: var(--clip-path-animation-start);
-    animation: clip-path-animation 0.5s ease var(--animation-delay) both;
 }
 
-.animationed-cover-widget > div.cover {
+.animationed-cover.open {
+    clip-path: var(--clip-path-animation-end);
+}
+
+.animationed-cover > div.cover-layer {
+    transition: clip-path 0.4s calc(var(--animation-delay) + 0.4s);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,11 +21,14 @@
     bottom: 0;
     background: rgb(var(--theme-color));
     clip-path: var(--clip-path-animation-start);
-    animation: clip-path-animation 0.5s ease calc(var(--animation-delay) + 0.6s) both;
     z-index: 1;
 }
 
-.animationed-cover-widget > div.cover.highlight {
+.animationed-cover.open > div.cover-layer {
+    clip-path: var(--clip-path-animation-end);
+}
+
+.animationed-cover > div.cover-layer.highlight {
     background: rgb(var(--highlight-color));
     color: rgb(var(--highlight-text-color));
 }

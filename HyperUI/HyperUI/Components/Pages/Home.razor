@@ -1,43 +1,56 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
 
-<AnimationedCover IsHighlightCover=true ElementClass="full-width full-viewport-height" Delay=0.5 WidgetAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.FromBottom CoverAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.ToTop>
-    <ChildContent>
+<button @onclick="@(() => PanelRef?.Show())">Open Panel</button>
+
+<PopoverPanel @ref=PanelRef>
+    <div>
+        <h1>Hello, world!</h1>
+        <p>Welcome to your new app.</p>
+
+        <br />
+        <br />
+
         <div>
-            <h1>Hello, world!</h1>
-            <p>Welcome to your new app.</p>
+            <button>Button</button>
 
-            <br />
-            <br />
+            <button highlight>Highlight Button</button>
 
-            <div>
-                <button>Button</button>
+            <AnimationedButton>AnimationedButton</AnimationedButton>
 
-                <AnimationedButton>AnimationedButton</AnimationedButton>
+            <AnimationedButton>
+                <ChildContent>
+                    Continue
+                </ChildContent>
+                <ContentOnHover>
+                    LogIn &rarr;
+                </ContentOnHover>
+            </AnimationedButton>
 
-                <AnimationedButton>
-                    <ChildContent>
-                        Continue
-                    </ChildContent>
-                    <ContentOnHover>
-                        LogIn &rarr;
-                    </ContentOnHover>
-                </AnimationedButton>
-
-                <AnimationedButton ShouldAlwaysHighlight=true>Selected</AnimationedButton>
-            </div>
-            <br />
-            <div>
-                <input />
-            </div>
-            <br />
-            <div>
-                <AnimationedCover Delay=1><p>animationed covered text</p></AnimationedCover>
-            </div>
+            <AnimationedButton ShouldAlwaysHighlight=true>Selected</AnimationedButton>
         </div>
-    </ChildContent>
-    <ContentOnHover>
-        <b>Hyper UI Playground</b>
-    </ContentOnHover>
-</AnimationedCover>
+        <br />
+        <div>
+            <input placeholder="input" />
+        </div>
+        <br />
+        <div>
+            <AnimationedCover Delay=1><p>animationed covered text</p></AnimationedCover>
+        </div>
+        <br />
+        <AnimationedButton OnClickCallback="@(() => PanelRef?.Hide())">
+            <ChildContent>
+                To close panel, click me
+            </ChildContent>
+            <ContentOnHover>
+                Close Panel
+            </ContentOnHover>
+        </AnimationedButton>
+    </div>
+</PopoverPanel>
+
+@code {
+    PopoverPanel? PanelRef;
+}

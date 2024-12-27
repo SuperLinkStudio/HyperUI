@@ -1,0 +1,26 @@
+﻿.popover-panel-mask {
+    transition: opacity 0.5s, backdrop-filter 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(var(--mask-color), 0.2);
+    opacity: 0;
+    backdrop-filter: blur(0);
+    pointer-events: none;
+}
+
+.popover-panel-mask.open {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+    pointer-events: auto;
+}
+
+.popover-panel-body {
+    background: rgb(var(--background-color));
+    padding: var(--container-padding);
+}

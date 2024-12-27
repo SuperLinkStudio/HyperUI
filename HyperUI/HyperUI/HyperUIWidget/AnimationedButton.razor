@@ -1,6 +1,7 @@
 ﻿@namespace HyperUIWidget
+@using Microsoft.AspNetCore.Components.Web;
 
-<button disable-normal-hover class="@(ShouldAlwaysHighlight ? "always-hightlight" : null) @(ElementClass)" style="@(ElementStyle)">
+<button @onclick=OnClickCallback disable-normal-hover class="@(ShouldAlwaysHighlight ? "always-hightlight" : null) @(ElementClass)" style="@(ElementStyle)">
     <div class="hover-cover child-highlight">
         @(ContentOnHover == null ? ChildContent : ContentOnHover)
     </div>
@@ -16,4 +17,6 @@
 
     [Parameter] public string? ElementClass { get; set; }
     [Parameter] public string? ElementStyle { get; set; }
+
+    [Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
 }
