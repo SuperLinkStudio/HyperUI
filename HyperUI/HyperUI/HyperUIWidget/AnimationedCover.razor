@@ -1,6 +1,6 @@
 ﻿@namespace HyperUIWidget
 
-<div class="animationed-cover @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(WidgetAnimationDirection)) @(ElementClass) @(stateClassFlag)" style="--animation-delay: @(Delay)s; @(ElementStyle)">
+<div class="animationed-cover @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(WidgetAnimationDirection)) @(stateClassFlag)">
     <div class="cover-layer @(CilpPathAnimationDirectionDefault.GetAnimationDefaultClassFromDirection(CoverAnimationDirection)) @(IsHighlightCover ? "highlight child-highlight" : null)">
         @(CoverContent)
     </div>
@@ -10,33 +10,55 @@
 </div>
 
 @code {
+    /// <summary>
+    /// 子组件
+    /// </summary>
     [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    /// <summary>
+    /// 遮罩的子组件
+    /// </summary>
     [Parameter] public RenderFragment? CoverContent { get; set; }
 
+    /// <summary>
+    /// 组件的CilpPath动画方向
+    /// </summary>
     [Parameter] public CilpPathAnimationDirectionDefault.DirectionDefault WidgetAnimationDirection { get; set; } = CilpPathAnimationDirectionDefault.DirectionDefault.FromLeft;
+
+    /// <summary>
+    /// 遮罩的CilpPath动画方向
+    /// </summary>
     [Parameter] public CilpPathAnimationDirectionDefault.DirectionDefault CoverAnimationDirection { get; set; } = CilpPathAnimationDirectionDefault.DirectionDefault.ToRight;
 
-    [Parameter] public double Delay { get; set; } = 0.0;
+    /// <summary>
+    /// 是否高亮Cover
+    /// </summary>
     [Parameter] public bool IsHighlightCover { get; set; }
 
-    [Parameter] public bool IsShowOnFirst { get; set; } = true;
+    /// <summary>
+    /// 是否在ParametersSet时自动显示
+    /// </summary>
+    [Parameter] public bool IsAutoOpen { get; set; } = true;
 
-    [Parameter] public string? ElementClass { get; set; }
-    [Parameter] public string? ElementStyle { get; set; }
+    string? stateClassFlag = null;
 
-    string? stateClassFlag = "";
-
-    protected override void OnAfterRender(bool firstRender)
+    protected override void OnParametersSet()
     {
-        base.OnAfterRender(firstRender);
+        base.OnParametersSet();
 
-        if (IsShowOnFirst && firstRender)
+        if (IsAutoOpen)
         {
             Show();
         }
     }
 
-    public void Show() => stateClassFlag = "open";
+    /// <summary>
+    /// 显示
+    /// </summary>
+    public void Show() => stateClassFlag = "show";
 
-    public void Hide() => stateClassFlag = "close";
+    /// <summary>
+    /// 隐藏
+    /// </summary>
+    public void Hide() => stateClassFlag = null;
 }

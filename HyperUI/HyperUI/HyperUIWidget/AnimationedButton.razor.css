@@ -8,11 +8,11 @@
     border: none;
     background: rgb(var(--highlight-color));
     color: rgb(var(--highlight-text-color));
-    clip-path: inset(0 100% 0 0 round var(--radius));
+    clip-path: var(--clip-path-animation-start);
     padding: 8px 16px;
     z-index: 1;
 }
 
 button:hover > div.hover-cover, button.always-hightlight > div.hover-cover {
-    clip-path: inset(0 0 0 0 round var(--radius));
+    clip-path: var(--clip-path-animation-end);
 }

@@ -1,16 +1,17 @@
 ﻿.animationed-cover {
-    transition: clip-path 0.4s var(--animation-delay);
+    transition: clip-path 0.4s;
     display: inline-block;
     position: relative;
     clip-path: var(--clip-path-animation-start);
 }
 
-.animationed-cover.open {
+.animationed-cover.show {
     clip-path: var(--clip-path-animation-end);
+    animation: clip-path-animation 0.4s;
 }
 
 .animationed-cover > div.cover-layer {
-    transition: clip-path 0.4s calc(var(--animation-delay) + 0.4s);
+    transition: clip-path 0.4s 0.4s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,8 +25,9 @@
     z-index: 1;
 }
 
-.animationed-cover.open > div.cover-layer {
+.animationed-cover.show > div.cover-layer {
     clip-path: var(--clip-path-animation-end);
+    animation: clip-path-animation 0.4s 0.4s;
 }
 
 .animationed-cover > div.cover-layer.highlight {

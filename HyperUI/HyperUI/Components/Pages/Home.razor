@@ -3,7 +3,10 @@
 
 <PageTitle>Home</PageTitle>
 
-<button @onclick="@(() => PanelRef?.Show())">Open Panel</button>
+<AnimationedCover IsAutoOpen="true">
+    <button @onclick="@(() => PanelRef?.Show())">Open Panel</button>
+</AnimationedCover>
+
 
 <PopoverPanel @ref=PanelRef>
     <div>
@@ -34,10 +37,6 @@
         <br />
         <div>
             <input placeholder="input" />
-        </div>
-        <br />
-        <div>
-            <AnimationedCover Delay=1><p>animationed covered text</p></AnimationedCover>
         </div>
         <br />
         <AnimationedButton OnClickCallback="@(() => PanelRef?.Hide())">

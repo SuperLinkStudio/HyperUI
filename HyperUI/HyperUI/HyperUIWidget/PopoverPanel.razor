@@ -1,7 +1,7 @@
 ﻿@namespace HyperUIWidget
 
-<div class="popover-panel-mask @(isOpen ? "open" : null)">
-    <AnimationedCover @ref=animationedCoverReference IsShowOnFirst=false IsHighlightCover=true WidgetAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.FromTop CoverAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.ToBottom>
+<div class="popover-panel-mask @(stateClassFlag)">
+    <AnimationedCover @ref=animationedCoverReference IsAutoOpen=false IsHighlightCover=true WidgetAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.FromTop CoverAnimationDirection=CilpPathAnimationDirectionDefault.DirectionDefault.ToBottom>
         <div class="popover-panel-body">
             @(ChildContent)
         </div>
@@ -9,21 +9,24 @@
 </div>
 
 @code {
+    /// <summary>
+    /// 子组件
+    /// </summary>
     [Parameter] public RenderFragment? ChildContent { get; set; }
-    bool isOpen { get; set; } = false;
+    string? stateClassFlag = null;
 
     AnimationedCover? animationedCoverReference;
 
     public void Show()
     {
-        isOpen = true;
+        stateClassFlag = "open";
 
         animationedCoverReference?.Show();
     }
 
     public void Hide()
     {
-        isOpen = false;
+        stateClassFlag = null;
 
         animationedCoverReference?.Hide();
     }
