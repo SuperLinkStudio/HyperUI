@@ -1,5 +1,5 @@
 ﻿.popover-panel-mask {
-    transition: opacity 0.5s, backdrop-filter 0.5s;
+    transition: opacity 0.8s, backdrop-filter 0.7s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,6 +12,7 @@
     opacity: 0;
     backdrop-filter: blur(0);
     pointer-events: none;
+    padding: var(--container-padding);
 }
 
 .popover-panel-mask.open {

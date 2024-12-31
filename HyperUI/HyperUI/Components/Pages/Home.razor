@@ -3,10 +3,13 @@
 
 <PageTitle>Home</PageTitle>
 
-<AnimationedCover IsAutoOpen="true">
+<div class="flex horizontal-center vertical-center full-viewport-height direction-column">
+    <h1>Hyper UI</h1>
+    <p>Hyper UI playground</p>
+    <br />
+    <br />
     <button @onclick="@(() => PanelRef?.Show())">Open Panel</button>
-</AnimationedCover>
-
+</div>
 
 <PopoverPanel @ref=PanelRef>
     <div>

@@ -7,7 +7,12 @@
 
 .animationed-cover.show {
     clip-path: var(--clip-path-animation-end);
-    animation: clip-path-animation 0.4s;
+    animation: clip-path-animation 0.4s backwards;
+}
+
+.animationed-cover.hide {
+    clip-path: var(--clip-path-animation-start);
+    animation: clip-path-animation-reverse 0.4s 0.4s backwards;
 }
 
 .animationed-cover > div.cover-layer {
@@ -27,7 +32,12 @@
 
 .animationed-cover.show > div.cover-layer {
     clip-path: var(--clip-path-animation-end);
-    animation: clip-path-animation 0.4s 0.4s;
+    animation: clip-path-animation 0.4s 0.4s backwards;
+}
+
+.animationed-cover.hide > div.cover-layer {
+    clip-path: var(--clip-path-animation-start);
+    animation: clip-path-animation-reverse 0.4s backwards;
 }
 
 .animationed-cover > div.cover-layer.highlight {

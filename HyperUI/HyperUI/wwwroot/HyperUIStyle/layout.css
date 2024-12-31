@@ -11,7 +11,7 @@
 }
 
 .full-viewport-width {
-    width: 100vw;
+    width: calc(100vw - 2 * var(--container-padding));
 }
 
 .full-height {
@@ -19,7 +19,7 @@
 }
 
 .full-viewport-height {
-    height: 100vh;
+    height: calc(100vh - 2 * var(--container-padding));
 }
 
 /*flex 部分*/
@@ -33,4 +33,8 @@
 
 .flex.horizontal-center {
     justify-content: center;
+}
+
+.flex.direction-column {
+    flex-direction: column;
 }
