@@ -1,0 +1,22 @@
+﻿/*
+    HyperUI main.css
+
+    please link this file to the header of your HTML file, such as: _Host.cshtml
+    It should be like this:
+    <head>
+        ...
+        <link rel="stylesheet" href="~/HyperUI/Assets/styles/main.css">
+        ...
+    </head>
+*/
+
+* {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, a, b, p, span {
+    margin: 0;
+}
