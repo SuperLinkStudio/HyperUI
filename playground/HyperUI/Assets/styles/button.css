@@ -1,0 +1,43 @@
+﻿/*
+    HyperUI button.css
+
+    a file that defines the style of the button.
+*/
+
+button {
+    -webkit-transition: -webkit-filter var(--transition-duration-fast);
+    transition: filter var(--transition-duration-fast);
+    display: inline-block;
+    border: none;
+    border-radius: var(--component-radius);
+    background: var(--secondary);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    cursor: pointer;
+    padding: 8px 16px;
+}
+
+button[primary] {
+    color: var(--primary-text);
+    background: var(--primary);
+}
+
+button[shadow] {
+    -webkit-transition: background var(--transition-duration-fast), -webkit-filter var(--transition-duration-fast);
+    transition: background var(--transition-duration-fast), filter var(--transition-duration-fast);
+    background: transparent;
+}
+
+button:hover {
+    -webkit-filter: brightness(1.05);
+    filter: brightness(1.05);
+}
+
+button[shadow]:hover {
+    background: var(--secondary);
+}
+
+button:active {
+    -webkit-filter: brightness(0.95);
+    filter: brightness(0.95);
+}

@@ -1,7 +1,7 @@
 ﻿/*
     HyperUI palette.css
 
-    A file to define the color palette of the HyperUI framework
+    A file that defines the attributes used in the style.
 
     It should be imported in the main.css file,
     or you can link it to the header of your HTML file, such as: _Host.cshtml
@@ -9,6 +9,21 @@
 
 :root {
     --primary: #F5B041;
-    --secondary: #F2F3F4;
-    --tertiary: #D5D8DC;
+    --secondary: #E6E6E6;
+    --panel-background: #D5D8DC;
+    --background: #FAFAFA;
+    --text: #91919;
+    --primary-text: #FFFFFF;
+    --information: #3498DB;
+    --success: #2ECC71;
+    --warning: #F39C12;
+    --danger: #E74C3C;
+    --panel-radius: 8px;
+    --component-radius: 4px;
+    --outline-width-thin: 1px;
+    --outline-width-normal: 2px;
+    --outline: #91919;
+    --transition-duration-fast: 0.1s;
+    --transition-duration-normal: 0.3s;
+    --transition-duration-slow: 0.5s;
 }
