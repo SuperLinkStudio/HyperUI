@@ -1,7 +1,7 @@
 ﻿/*
     HyperUI main.css
 
-    please link this file to the header of your HTML file, such as: _Host.cshtml
+    Please link this file to the header of your HTML file, such as: _Host.cshtml
     It should be like this:
     <head>
         ...
@@ -9,6 +9,8 @@
         ...
     </head>
 */
+
+@import './palette.css';
 
 * {
     -webkit-user-select: none;

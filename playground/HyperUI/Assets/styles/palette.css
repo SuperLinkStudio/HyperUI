@@ -1,0 +1,14 @@
+﻿/*
+    HyperUI palette.css
+
+    A file to define the color palette of the HyperUI framework
+
+    It should be imported in the main.css file,
+    or you can link it to the header of your HTML file, such as: _Host.cshtml
+*/
+
+:root {
+    --primary: #F5B041;
+    --secondary: #F2F3F4;
+    --tertiary: #D5D8DC;
+}
